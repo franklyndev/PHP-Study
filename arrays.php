@@ -1,13 +1,27 @@
 <?php
 // arrays
 
-$data = ['Franklyn','Joe','Marie',  true, 34];
+$data = [
+        'Franklyn',
+        'Joe',
+        'Marie',  
+        true, 
+        34
+        ]; // normal array
+
 /*
 if u want determine specifics index, u can do it,
 putting some value as index(anything) + =>, ex:  
 */
 
-$otherData = ['tel'=> '(74)9 9103-0000','adress'=> 'Avenue 223', 'name'=> 'Marie', 2=> true, 1=> 34];
+$otherData = [
+            'informations' => ['tel' => '(74)9 9103-0000', 'adress' => 'Avenue 223'],
+             'name'=> 'Marie', 
+             2=> true, 
+             1=> 34
+             ]; // different array
+
+// And even it's possible to create an array inside another one. It called multidimensional array
 
 print_r($otherData['name']);
 echo "<br>";
