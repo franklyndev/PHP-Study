@@ -1,15 +1,41 @@
 <?php
 // arrays
 
-$data = [1=>'Franklyn',3=>'Joe',2=>'Marie', 5=> true, 6=> 34];
+$data = ['Franklyn','Joe','Marie',  true, 34];
+/*
+if u want determine specifics index, u can do it,
+putting some value as index(anything) + =>, ex:  
+*/
 
-echo $data[1];
+$otherData = ['tel'=> '(74)9 9103-0000','adress'=> 'Avenue 223', 'name'=> 'Marie', 2=> true, 1=> 34];
+
+print_r($otherData['name']);
+echo "<br>";
+// output...
+print_r($data);
+echo "<br>";
+
+print_r($otherData);
+
+echo "<br>";
+
+//Manipulating...
 
 // adding at the final
-$data[] = ['Yo'] ;
+
+$data[] = 'last';
+# OR
+array_push($data, 'real last');
 
 
 // adding at the beginning
-// array_unshift($data, 'Initial');
 
-print_r($data);
+array_unshift($data, 'Initial');
+
+//-------------------------------
+
+//Printing...
+print_r($data); // use to print the array or specifics values also.
+# OR
+echo "<br>";
+echo $data[1]; // use echo if u want display a specific value, putting its index.
