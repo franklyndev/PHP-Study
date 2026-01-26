@@ -10,16 +10,16 @@ $data = [
         ]; // normal array
 
 /*
-if u want determine specifics index, u can do it,
-putting some value as index(anything) + =>, ex:  
+if u want determine specifics indexes, u can do it,
+setting some value as index(anything) + =>, ex:  
 */
 
 $otherData = [
-            'informations' => ['tel' => '(74)9 9103-0000', 'adress' => 'Avenue 223'],
-             'name'=> 'Marie', 
-             2=> true, 
-             1=> 34
-             ]; // different array
+                'informations' => ['tel' => '(74)9 9103-0000', 'address' => 'Avenue 223'],
+                'name'=> 'Marie', 
+                2=> true, 
+                1=> 34
+                ]; // different array
 
 // And even it's possible to create an array inside another one. It called multidimensional array
 
@@ -32,6 +32,14 @@ echo "<br>";
 print_r($otherData);
 
 echo "<br>";
+
+echo "printing multidimensional array <br>";
+
+print_r($otherData['informations']['tel']); // printing multidimensional array
+
+
+echo "<br>";
+
 
 //Manipulating...
 
