@@ -9,13 +9,19 @@
 // Arrays
     // echo gettype(['Yo', 2]);
 // Object
-    /* 
-    class person{
-        
+     
+    class Costumer{ // class
+
+        public $name; // attribute
+
+        public function Costumer($name){ // construct
+            $this->name = $name;
+        }
+
     }
+    $person = new Costumer(); // object
+var_dump($person); // printing
     
-    echo gettype(new person);
-    */ 
 // Null
     // $iAm = Null;
     // echo gettype($iAm);
