@@ -40,6 +40,18 @@ function sum(){
 sum();
 
 ?>
+<hr>
+<h2>$_SERVER</h2>
+<p>It provides information about the server and the request being handled.</p>
+<?php
+
+echo $_SERVER['PHP_SELF'] . "<br>";
+
+echo $_SERVER['SERVER_NAME'] . "<br>";
+
+echo $_SERVER['DOCUMENT_ROOT'] . "<br>";
+
+?>
 
 </body>
 </html>
