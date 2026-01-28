@@ -37,3 +37,37 @@ function processArray($num, $double, $square){
 $numbers = [1, 2, 3, 4, 5];
 
 processArray($numbers, 'doubling', 'squaring');
+
+/*
+STUDY IMPROVEMENT
+<?php
+
+// Callback Functions
+
+function doubling($n){
+    return $n * 2;
+}
+
+function squaring($n){
+    return $n ** 2;
+}
+
+function processArray($num, ...$callbacks){
+    echo "Original Array = ";
+    foreach ($num as $n){
+        echo $n . " ";
+    }
+
+    foreach ($callbacks as $cb) {
+        echo "\nResult = ";
+        foreach ($num as $n) {
+            echo $cb($n) . " ";
+        }
+    }
+}
+
+$numbers = [1, 2, 3, 4, 5];
+
+processArray($numbers, 'doubling', 'squaring');
+
+*/
