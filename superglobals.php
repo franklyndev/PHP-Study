@@ -24,6 +24,7 @@
 ?>
 <h1>Superglobals</h1>
 <hr>
+
 <h2>$GLOBALS</h2>
 <p>$GLOBALS is a superglobal array that contains all global variables</p>
 <?php 
@@ -38,8 +39,10 @@ function sum(){
 }
 
 sum();
-
 ?>
+
+// ###########################################################################################
+
 <hr>
 <h2>$_SERVER</h2>
 <p>It provides information about the server and the request being handled.</p>
@@ -51,7 +54,11 @@ echo $_SERVER['SERVER_NAME'] . "<br>";
 
 echo $_SERVER['DOCUMENT_ROOT'] . "<br>";
 
+echo $_SERVER['SERVER_PORT'] . "<br>";
+
 ?>
+// ###########################################################################################
+
 
 </body>
 </html>
