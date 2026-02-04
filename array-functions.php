@@ -11,6 +11,7 @@ array_unshift($array, "valor") = adiciona um ou mais elementos no inicio do arra
 array_push($array, $valor, "valor") = adiciona um ou mais elementos no fim do array
 array_combine($keys,$values) = mescla os dois arrays em chaves e valores.
 array_sum() = calcula a soma dos elementos do array 
+array_search = array_search e procura um valor dentro de um array e retorna o índice do valor se encontrar.
 explode("/","20/10/2009") = transforma uma string em um array
 implode ("separador", $array) = transforma um array em uma string
 */
