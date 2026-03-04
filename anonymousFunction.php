@@ -20,3 +20,4 @@ $world = function($he){ // $world will receive $hello function as argument
 };
 
 $world($hello); // assigning $hello to $world
+
