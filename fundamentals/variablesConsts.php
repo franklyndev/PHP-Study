@@ -25,5 +25,6 @@ const STATUS_PAY = 'pay';
 
 echo STATUS_PAY;
 
-$cons = get_defined_constant
+$cons = get_defined_constants();
 
+echo $cons;

@@ -14,8 +14,8 @@ function applyOperation(array $arr, callable $callback): array
 }
 
 
-$double = applyOperation($arr, function ($n) {
-    return $n * 2;
+$double = applyOperation($arr, function ($n) { // anonymous function here's passed as a callback
+    return $n * 2;  // $n would be each element of the array in each iteration
 });
 
 

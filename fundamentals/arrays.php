@@ -61,3 +61,5 @@ print_r($data); // use to print the array or specifics values also.
 # OR
 echo "<br>";
 echo $data[1]; // use echo if u want display a specific value, putting its index.
+
+echo count($data);

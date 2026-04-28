@@ -8,13 +8,13 @@
 </head>
 <body>
 
-    <p>It's a dynamic way to name varibales</p>
+    <p>It's a dynamic way to name variables</p>
 
     <?php 
         // Variable Variable
 
-        $destination = "city";
-        
+        $destination = "city"; // Variable Name
+        // like: $city = "Aracaju"
         $$destination = "Aracaju";
 
         echo $city;

@@ -7,4 +7,4 @@ $myName = &$name; # when u put a "&" before $, ur making reference of $name. So 
 $name = 'Joe';
 
 echo $name, "<br>";
-echo $myName;
+echo $myName; // output = Joe
