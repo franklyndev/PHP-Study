@@ -62,3 +62,6 @@ print_r($result);
 $people = ['Frankyn', 'Lucas', 'David', 'Tyler', 'Light'];
 $people_part = array_slice($people, 2); // ['David', 'Tyler', 'Light]
 
+// Functions for Arrays in PHP:
+// https://www.php.net/manual/en/ref.array.php 
+
