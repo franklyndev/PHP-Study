@@ -2,10 +2,20 @@
 
 // SCOPE
 
-$name = "Franklyn Santos";
+/*
+É possível aceder dentro de uma função a uma variável global.
+Fazemos da seguinte forma:
+*/
 
-function displayName(){
-    global $name;
-    echo $name;
+$nome = 'joao';
+
+function dados(){
+    global $nome; // se nao usarmos a palavra reservada global, a variavel $nome nao sera reconhecida no escopo da funcao.
+    $nome = 'joaquim';
 }
-displayName($name);
+
+dados();
+
+echo $nome;
+
+// IMPORTANTE: A melhor estratégia passa por usar parâmetros nas funções.
