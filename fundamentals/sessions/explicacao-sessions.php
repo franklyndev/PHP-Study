@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicacao sobre Sessions em PHP</title>
+</head>
+<body>
+    <h1>Explicacao sobre Sessions em PHP</h1>
+
+    <p>
+        <strong>SESSION</strong> em PHP serve para guardar informacoes de um usuario
+        enquanto ele navega pelo site.
+    </p>
+
+    <p>
+        Por exemplo: voce entra em um site, faz login, adiciona produtos no carrinho
+        ou muda alguma preferencia. O PHP precisa lembrar essas informacoes entre uma
+        pagina e outra.
+    </p>
+
+    <p>
+        Como cada requisicao HTTP e independente, o PHP usa <code>$_SESSION</code>
+        para manter esses dados salvos temporariamente no servidor.
+    </p>
+
+    <h2>Como iniciar uma sessao</h2>
+
+    <p>
+        Para usar sessoes, o primeiro passo e sempre iniciar a sessao com:
+    </p>
+
+    <pre><code>&lt;?php
+session_start();
+?&gt;</code></pre>
+
+    <p>
+        O <code>session_start()</code> precisa vir antes de qualquer HTML ou texto ser
+        enviado para o navegador.
+    </p>
+
+    <h2>Como guardar valores na sessao</h2>
+
+    <p>
+        Depois de iniciar a sessao, voce pode guardar valores assim:
+    </p>
+
+    <pre><code>&lt;?php
+session_start();
+
+$_SESSION['nome'] = 'Franklyn';
+$_SESSION['sobrenome'] = 'Santos';
+?&gt;</code></pre>
+
+    <h2>Como recuperar valores da sessao</h2>
+
+    <p>
+        Em outra pagina, desde que ela tambem tenha <code>session_start()</code>,
+        voce pode recuperar esses valores:
+    </p>
+
+    <pre><code>&lt;?php
+session_start();
+
+echo $_SESSION['nome'];
+echo $_SESSION['sobrenome'];
+?&gt;</code></pre>
+
+    <h2>Exemplo pratico</h2>
+
+    <p>
+        No exemplo da pasta <code>exemplo-01</code>, quando voce acessa
+        <code>adicionar1.php</code>, ele salva o nome na sessao:
+    </p>
+
+    <pre><code>&lt;?php
+session_start();
+$_SESSION['nome'] = 'Franklyn';
+?&gt;</code></pre>
+
+    <p>
+        Depois, quando voce volta para <code>index.php</code>, o PHP ainda lembra esse
+        valor porque ele ficou salvo na sessao.
+    </p>
+
+    <h2>Como remover valores da sessao</h2>
+
+    <p>
+        Para remover um valor especifico da sessao, o ideal e usar:
+    </p>
+
+    <pre><code>&lt;?php
+session_start();
+unset($_SESSION['nome']);
+?&gt;</code></pre>
+
+    <p>
+        No seu codigo, voce esta fazendo assim:
+    </p>
+
+    <pre><code>&lt;?php
+$_SESSION['nome'] = '';
+?&gt;</code></pre>
+
+    <p>
+        Isso funciona visualmente porque deixa o valor vazio, mas a variavel ainda
+        existe na sessao. Com <code>unset()</code>, ela e realmente removida.
+    </p>
+
+    <h2>Como destruir a sessao inteira</h2>
+
+    <p>
+        Para destruir a sessao inteira, usamos:
+    </p>
+
+    <pre><code>&lt;?php
+session_start();
+session_destroy();
+?&gt;</code></pre>
+
+    <p>
+        Isso e comum quando o usuario faz logout de um sistema.
+    </p>
+
+    <h2>Analogia simples</h2>
+
+    <p>
+        Imagine que a sessao e uma mochila que o servidor entrega para cada visitante
+        do site.
+    </p>
+
+    <p>
+        Quando o usuario entra no site, ele ganha uma mochila propria. Dentro dela, o
+        PHP pode guardar informacoes como nome, login, carrinho de compras ou
+        preferencias.
+    </p>
+
+    <p>
+        Cada vez que o usuario muda de pagina, ele continua carregando a mesma mochila.
+        Entao o site consegue lembrar quem ele e e o que ele fez antes.
+    </p>
+
+    <p>
+        Quando voce usa <code>unset()</code>, e como tirar apenas um objeto da mochila.
+    </p>
+
+    <p>
+        Quando voce usa <code>session_destroy()</code>, e como jogar a mochila inteira
+        fora.
+    </p>
+</body>
+</html>
