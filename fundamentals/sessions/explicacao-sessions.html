@@ -23,7 +23,7 @@
         Como cada requisicao HTTP e independente, o PHP usa <code>$_SESSION</code>
         para manter esses dados salvos temporariamente no servidor.
     </p>
-
+    <hr>
     <h2>Como iniciar uma sessao</h2>
 
     <p>
@@ -38,7 +38,7 @@ session_start();
         O <code>session_start()</code> precisa vir antes de qualquer HTML ou texto ser
         enviado para o navegador.
     </p>
-
+    <hr>
     <h2>Como guardar valores na sessao</h2>
 
     <p>
@@ -51,7 +51,7 @@ session_start();
 $_SESSION['nome'] = 'Franklyn';
 $_SESSION['sobrenome'] = 'Santos';
 ?&gt;</code></pre>
-
+    <hr>
     <h2>Como recuperar valores da sessao</h2>
 
     <p>
@@ -65,7 +65,7 @@ session_start();
 echo $_SESSION['nome'];
 echo $_SESSION['sobrenome'];
 ?&gt;</code></pre>
-
+    <hr>
     <h2>Onde ficam os dados da sessao</h2>
 
     <p>
@@ -109,7 +109,7 @@ echo session_save_path();
         Resumindo: o navegador guarda o ID da sessao, e o servidor guarda os dados
         da sessao.
     </p>
-
+    <hr>
     <h2>O que acontece ao fechar o navegador</h2>
 
     <p>
@@ -133,7 +133,15 @@ echo session_save_path();
         sem o mesmo <code>PHPSESSID</code>, o PHP nao consegue ligar o navegador aos
         dados antigos.
     </p>
+    -------+-----------+-------
+    <p>
+    Mas existe uma maneira de por um tempo de duração para o cookie seja de minutos, horas ou até anos. Assim mesmo que saia do site, se voltares ao site dentro do tempo de duração do cookie, seus dados ainda estarão lá e sua sessão ainda estará ativa.
+    </p>
 
+    <p>
+        Detalhe: Se colocares um tempo de 10s e continuar no site e o tempo acabar e mesmo assim estiveres no site, a sua sessão irá ser trocada pra outra, devido ao tempo de sessão ter se expirado, e irás perder os dados, simplesmente somem, mesmo com voce ainda na tela.
+    </p>
+    <hr>
     <h2>Exemplo pratico</h2>
 
     <p>
@@ -150,7 +158,8 @@ $_SESSION['nome'] = 'Franklyn';
         Depois, quando voce volta para <code>index.php</code>, o PHP ainda lembra esse
         valor porque ele ficou salvo na sessao.
     </p>
-
+    
+    <hr>
     <h2>Como remover valores da sessao</h2>
 
     <p>
@@ -174,7 +183,7 @@ $_SESSION['nome'] = '';
         Isso funciona visualmente porque deixa o valor vazio, mas a variavel ainda
         existe na sessao. Com <code>unset()</code>, ela e realmente removida.
     </p>
-
+    <hr>
     <h2>Como destruir a sessao inteira</h2>
 
     <p>
@@ -189,7 +198,7 @@ session_destroy();
     <p>
         Isso e comum quando o usuario faz logout de um sistema.
     </p>
-
+    <hr>
     <h2>Analogia simples</h2>
 
     <p>
