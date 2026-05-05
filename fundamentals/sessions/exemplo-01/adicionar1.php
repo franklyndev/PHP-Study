@@ -1,4 +1,7 @@
 <?php 
+session_name('minha_sessao');
+session_set_cookie_params(60*3);
+
 session_start();
 $_SESSION['nome'] = 'Franklyn';
 ?>

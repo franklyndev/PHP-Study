@@ -2,6 +2,9 @@
 
 // todos os scripts devem ter o inicio de sessao, 
 // antes de qualquer output no PHP
+session_name('minha_sessao'); // cria o nome da sua sessao
+session_set_cookie_params(60*3); // define o tempo que seu cookie ficará ativo. ATENCAO: o tempo sempre é contado em "segundos"
+// é necessário replicar esses comandos em todos os sessions_starts que tem ons outros arquivos tbm
 session_start();
 
 // o valor de $nome e $sobrenome vai ser definido tendo
