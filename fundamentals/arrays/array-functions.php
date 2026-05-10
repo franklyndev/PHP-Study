@@ -34,8 +34,7 @@ $result = array_pop($names);
 $result = array_shift($names);
 
 // array_unshift($array, "valor") = adiciona um ou mais elementos no inicio do array
-$result = array_unshift($names, 'beginning');
-
+$result = array_unshift($names, 'beginning'); 
 // array_push($array, $valor, "valor") = adiciona um ou mais elementos no fim do array
 $result = array_push($names, 'ending');
 

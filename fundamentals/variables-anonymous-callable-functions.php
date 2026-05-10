@@ -18,6 +18,7 @@ $one = 1; // you could also implement 'use' key-word in Anon Func, possibiliting
 // // but when u do this ur literally copying the value in, not acessing the variable.
 // // but passing the value as reference by using '&' u change the global value as well.
 
+
 $sum = function (int|float ...$numbers) use($one) : int|float{ // Unamed function that assigns its purpose to a variable
     echo $one . "\n";
     return array_sum($numbers);
