@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo Completo sobre $_GET</title>
+
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container{
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2{
+      color: #1e88e5;
+    }
+
+    code{
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 5px;
+    }
+
+    pre{
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    blockquote{
+      background: #e3f2fd;
+      padding: 15px;
+      border-left: 5px solid #1e88e5;
+      border-radius: 5px;
+      font-style: italic;
+    }
+
+    ul{
+      padding-left: 20px;
+    }
+
+    .important{
+      background: #fff3cd;
+      padding: 15px;
+      border-left: 5px solid #ffc107;
+      border-radius: 5px;
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td{
+      border: 1px solid #ccc;
+    }
+
+    th, td{
+      padding: 10px;
+      text-align: left;
+    }
+
+    th{
+      background: #1e88e5;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>📌 Superglobal $_GET no PHP</h1>
+
+    <p>
+      A superglobal <strong>$_GET</strong> é um array do PHP usado para
+      capturar informações enviadas pela URL através da
+      <strong>query string</strong>.
+    </p>
+
+    <hr>
+
+    <h2>🔗 Exemplo de URL</h2>
+
+    <code>
+      produto.php?id=25&categoria=games
+    </code>
+
+    <p>
+      O PHP automaticamente transforma isso em:
+    </p>
+
+    <pre>
+$_GET['id'] = 25;
+$_GET['categoria'] = "games";
+    </pre>
+
+    <hr>
+
+    <h2>💻 Exemplo em PHP</h2>
+
+    <pre>
+&lt;?php
+
+$id = $_GET['id'];
+
+echo "Produto: $id";
+
+?&gt;
+    </pre>
+
+    <hr>
+
+    <h2>🛒 Analogia da Loja Online</h2>
+
+    <p>
+      Imagine uma loja online.
+      Cada produto possui um ID único.
+    </p>
+
+    <p>
+      Quando o usuário clica em um produto, o site muda a URL:
+    </p>
+
+    <code>
+      produto.php?id=25
+    </code>
+
+    <p>
+      O <strong>$_GET</strong> funciona como um mensageiro
+      entre o navegador e o servidor.
+    </p>
+
+    <blockquote>
+      “O usuário clicou no produto de ID 25.”
+    </blockquote>
+
+    <p>
+      Então o backend pega esse ID e procura o produto correto
+      no banco de dados.
+    </p>
+
+    <pre>
+&lt;?php
+
+$id = $_GET['id'];
+
+buscarProduto($id);
+
+?&gt;
+    </pre>
+
+    <p>
+      Isso permite que uma única página carregue milhares de produtos diferentes.
+    </p>
+
+    <hr>
+
+    <h2>⚡ Exemplos Reais de Uso</h2>
+
+    <h3>🔍 Pesquisa</h3>
+
+    <code>
+      search.php?produto=teclado
+    </code>
+
+    <pre>
+$produto = $_GET['produto'];
+    </pre>
+
+    <h3>🎮 Filtro de Categoria</h3>
+
+    <code>
+      produtos.php?categoria=games
+    </code>
+
+    <h3>📄 Paginação</h3>
+
+    <code>
+      produtos.php?pagina=2
+    </code>
+
+    <h3>💰 Ordenação</h3>
+
+    <code>
+      produtos.php?ordenar=preco
+    </code>
+
+    <hr>
+
+    <h2>🔒 Por que não usar GET para tudo?</h2>
+
+    <div class="important">
+      Tudo enviado pelo GET fica visível na URL.
+    </div>
+
+    <p>
+      Então informações sensíveis não devem usar GET.
+    </p>
+
+    <h3>❌ Exemplo inseguro</h3>
+
+    <code>
+      login.php?senha=123456
+    </code>
+
+    <p>
+      Qualquer pessoa conseguiria ver a senha na URL.
+    </p>
+
+    <hr>
+
+    <h2>🧠 Diferença Mental</h2>
+
+    <table>
+      <tr>
+        <th>Tecnologia</th>
+        <th>Função</th>
+      </tr>
+
+      <tr>
+        <td>$_GET</td>
+        <td>Buscar ou visualizar dados pela URL</td>
+      </tr>
+
+      <tr>
+        <td>$_POST</td>
+        <td>Enviar dados ocultos/formulários</td>
+      </tr>
+
+      <tr>
+        <td>$_SESSION</td>
+        <td>Guardar dados temporários no servidor</td>
+      </tr>
+
+      <tr>
+        <td>Cookies</td>
+        <td>Guardar dados no navegador</td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <h2>📌 Resumo Final</h2>
+
+    <p>
+      O <strong>$_GET</strong> é usado para ler informações enviadas pela URL.
+      Ele é muito utilizado para:
+    </p>
+
+    <ul>
+      <li>Navegação entre páginas</li>
+      <li>Buscar produtos</li>
+      <li>Filtros</li>
+      <li>Paginação</li>
+      <li>Ordenação</li>
+    </ul>
+
+    <p>
+      Ele é rápido, simples e essencial para aplicações web dinâmicas.
+    </p>
+
+  </div>
+
+</body>
+</html>
