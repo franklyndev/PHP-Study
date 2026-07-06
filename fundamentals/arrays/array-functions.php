@@ -11,7 +11,11 @@ $dates = [
 ];
 
 // is_array ($array) = verifica se a variavel é um array
-$result = is_array($names); // true
+// $result = is_array($names); // true
+
+$result = array_filter($age, fn($a) => $a % 2 == 1); // usada para manter ou remover elementos de um array baseado em uma regra
+// print_r($result); // 15, 19, 21
+// die();
 
 // in_array ($valor, $array) = verifica se um valor está em um determinado array
 $result = count($names);   // true
